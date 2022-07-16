@@ -1,5 +1,6 @@
 import React from 'react'
 import Particle from './particle'
+import Footer from './footer'
 import './nav.css'
 
 const Home = () => {
@@ -7,7 +8,7 @@ const Home = () => {
         <div className='home-div'>
             <h1 >sldkfosd</h1>
             <Particle className='particle' />
-            <h1 >asdjfohsadfnlksdhf</h1>
+            <Footer />
         </div>
     )
 }
