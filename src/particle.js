@@ -131,7 +131,7 @@ export default function Particle() {
                         },
                         "retina_detect": true,
                         "background": {
-                            "color": "#73777B",
+                            "color": "#B2C8DF",
                             "image": "",
                             "position": "50% 50%",
                             "repeat": "no-repeat",
