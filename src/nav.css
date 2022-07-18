@@ -44,6 +44,20 @@ li {
     backdrop-filter: blur(15px);
 }
 
+.input-box {
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 5px;
+    width: 800px;
+    height: 30px;
+    margin-top: 50px;
+    outline: none;
+}
+
+.input-box:focus {
+    border: 2px solid #B2C8DF;
+}
+
 .nav-bar {
     color: #0F2C67;
     font-weight: 900;
