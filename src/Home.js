@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Particle from './particle'
 import Footer from './footer'
+import DownloadButtonDefault from './DownloadButtonDefault'
+import DownloadButtonInvailid from './DownloadButtonInvailid'
+import DownloadButton from './DownloadButton'
 import './nav.css'
 
 const Home = () => {
@@ -9,8 +12,13 @@ const Home = () => {
 
     const URL = (e) => {
         setUrl(e.target.value);
-        console.log(VideoUrl)
+        //console.log(VideoUrl)
     }
+
+    useEffect(() => {
+        const id = VideoUrl.replace("https://www.youtube.com/watch?v=", "");
+        setId(id);
+    }, [VideoUrl])
 
 
     return (
@@ -23,6 +31,29 @@ const Home = () => {
                         </form>
                     </div>
                 </div>
+
+                {
+                    VideoUrl === '' ? (<DownloadButtonDefault />) : (
+                        <div>
+                            {
+                                VideoUrl.startsWith("https://www.youtube.com/watch?v=") ||
+                                    VideoUrl.startsWith("https://youtube.com/watch?v=") ||
+                                    VideoUrl.startsWith("www.youtube.com/watch?v=") ||
+                                    VideoUrl.startsWith("youtube.com/watch?v=") ||
+                                    VideoUrl.startsWith("https://youtu.be/") ||
+                                    VideoUrl.startsWith("https://youtube.com/shorts/") ||
+                                    VideoUrl.startsWith("https://m.youtube.com/watch?v=") ||
+                                    VideoUrl.startsWith("v=") ? (
+                                    <div>
+                                        <DownloadButton id={id} type="mp3" />
+                                        <br />
+                                        <DownloadButton id={id} type="videos" />
+                                    </div>
+                                ) : (<DownloadButtonInvailid />)
+                            }
+                        </div>
+                    )
+                }
 
             </div>
             <Particle className='particle' />
