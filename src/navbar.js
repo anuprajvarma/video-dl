@@ -8,7 +8,7 @@ const navbar = () => {
             <nav className='main-nav'>
                 <div className='main-div'>
                     <div className='nav-bar'>
-                        <p>UTUB-Hub</p>
+                        <p>Utub-Hub</p>
                     </div>
                     <div className='nav-list'>
                         <ul className='main-list'>
